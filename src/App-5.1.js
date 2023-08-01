@@ -16,13 +16,8 @@ const App = () => {
   const [password, setPassword] = useState('')
   const [user, setUser] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
-  const [validMessage, setMessage] = useState(null)
 
-  const [title, setTitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [url, setUrl] = useState('')
   
-//Login handleri  
   const handleLogin = async (event) => {
     event.preventDefault()
     try {
@@ -39,14 +34,32 @@ const App = () => {
       setUsername('')
       setPassword('')
     } catch (exception) {
-      setErrorMessage('Wrong username or password')
+      setErrorMessage('wrong credentials')
       setTimeout(() => {
       setErrorMessage(null)
       }, 5000)
     }
   }
+
+  const addBlog = (event) => {
+    event.preventDefault()
+    const blogObject = {
+      content: newBlog,
+      important: Math.random() > 0.5,
+    }
+    blogService
+    .create(blogObject)
+      .then(returnedBlog => {
+      setBlogs(blogs.concat(returnedBlog))
+      setNewBlog('')
+    })
+  }
+
+  const handleBlogChange = (event) => {
+    setNewBlog(event.target.value)
+  }
   
-//etusivun login -form kysyy käyttäjän tunnusta
+//etusivun login form kysyy tunnusta jne 
   const loginForm = () => (
     <form onSubmit={handleLogin}>
       <div>
@@ -71,6 +84,8 @@ const App = () => {
     </form>      
   )
 
+//IF lauseen sisään blogien renderöinti
+
 //Hookki katsoo onko localstoragessa käyttäjä kirjautuneena eli onko token
   useEffect(() => {
     const loggedUserJSON = window.localStorage.getItem('loggedBlogappUser')
@@ -87,68 +102,17 @@ const App = () => {
     )  
   }, [])
 
-
-//Blogin lisäys
-  const addBlog = (event) => {
-    event.preventDefault()
-    
-    const blogObject = {
-      author: author,
-      title: title,
-      url: url,
-    }
-    blogService
-    .create(blogObject)
-      .then(returnedBlog => {
-      setBlogs(blogs.concat(returnedBlog))
-      setNewBlog('')
-      setMessage('New blog "' + title + '" added by author ' + author)
-      setTimeout(() => {
-      setMessage(null)
-      }, 5000)
-    })
-  }
-
-  const handleBlogChange = (event) => {
-    setNewBlog(event.target.value)
-    console.log("Ollaanko handleBlogissa")
-  }
-
-//Blogin formin renderöinti
   const blogForm = () => (
     <form onSubmit={addBlog}>
-      <div>
-        title: 
-          <input
-          type="text"
-          value={title}
-          name="Title"
-          onChange={({ target }) => setTitle(target.value)}
-        />
-      </div>
-      <div>
-        author: 
-          <input
-          type="text"
-          value={author}
-          name="Author"
-          onChange={({ target }) => setAuthor(target.value)}
-        />
-      </div>
-      <div>
-        url: 
-          <input
-          type="text"
-          value={url}
-          name="Url"
-          onChange={({ target }) => setUrl(target.value)}
-        />
-      </div>
-      <button type="submit">create</button>
-    </form>   
+      <input
+        value={newBlog}
+        onChange={handleBlogChange}
+      />
+      <button type="submit">save</button>
+    </form>  
   )
 
-//RETURN
+
  if (user === null){
     return (
       
@@ -164,7 +128,6 @@ const App = () => {
     return(
       <div>
         <h2>Blogs</h2>
-        <Notification message={validMessage} />
         <p>{user.name} logged in  
           <button onClick={ () => {window.localStorage.clear(); setUser(null)} }>
           logout 

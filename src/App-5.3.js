@@ -102,7 +102,9 @@ const App = () => {
       .then(returnedBlog => {
       setBlogs(blogs.concat(returnedBlog))
       setNewBlog('')
-      setMessage('New blog "' + title + '" added by author ' + author)
+
+      //Ilmoitus blogin lisäyksestä. 
+      setMessage('New blog added')
       setTimeout(() => {
       setMessage(null)
       }, 5000)
