@@ -3,6 +3,7 @@ import Blog from './components/Blog'
 import Notification from './components/Notification'
 import blogService from './services/blogs'
 import loginService from './services/login'
+import logo from './ak.png'
 
 //
 
@@ -50,7 +51,7 @@ const App = () => {
   const loginForm = () => (
     <form onSubmit={handleLogin}>
       <div>
-        username
+        Username
           <input
           type="text"
           value={username}
@@ -59,11 +60,11 @@ const App = () => {
         />
       </div>
       <div>
-        password
+        Password
           <input
           type="password"
           value={password}
-          name="Password"
+          name="Passwordasdfasdf"
           onChange={({ target }) => setPassword(target.value)}
         />
       </div>
@@ -118,7 +119,7 @@ const App = () => {
   const blogForm = () => (
     <form onSubmit={addBlog}>
       <div>
-        title: 
+        Title:  
           <input
           type="text"
           value={title}
@@ -127,7 +128,7 @@ const App = () => {
         />
       </div>
       <div>
-        author: 
+        Author:   
           <input
           type="text"
           value={author}
@@ -136,7 +137,7 @@ const App = () => {
         />
       </div>
       <div>
-        url: 
+        URL:  
           <input
           type="text"
           value={url}
@@ -151,8 +152,11 @@ const App = () => {
 //RETURN
  if (user === null){
     return (
+      <div style={{ 
+        backgroundImage: `url(${logo})` 
+      }}>
       
-      <div>
+
         <h2>Blogs App</h2>
 
         <Notification message={errorMessage} />
@@ -162,10 +166,19 @@ const App = () => {
     )}
       
     return(
-      <div>
+      <div style={{ 
+        backgroundImage: `url(${logo})`, 
+        backgroundRepeat: 'no-repeat',
+        backgroundPositionX: 'left',
+        backgroundPositionY: '-1cm',
+        backgroundSize: '30%',
+        alignItems: 'center'
+
+      }}>
+
         <h2>Blogs</h2>
         <Notification message={validMessage} />
-        <p>{user.name} logged in  
+        <p>Logged in as {user.name}   
           <button onClick={ () => {window.localStorage.clear(); setUser(null)} }>
           logout 
           </button>

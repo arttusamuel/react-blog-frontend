@@ -1,0 +1,90 @@
+
+/* Base style */
+*{
+    margin: 50;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items:center;
+    background-position-y:calc(20px );    
+}
+
+/* Heading for the page */
+h2 {
+    margin: 50px;
+    padding: 10px;
+    font-size:xxx-large;
+    font-family:Verdana;
+    text-shadow:1px 1px 1px #cc6d3d, 0 0 1em #000000, 0 0 0.2em #a3b4c8;
+    align-items: center;
+    text-align: center;
+    max-width: 400px auto;
+    border-bottom: 2px solid #cc6d3d;
+    color:#cc6d3d;
+}
+
+/* Small texts */
+p {
+    padding:5px;
+    margin-left: 400px auto;
+    color: #a3b4c8;
+}
+/* Logout Button */
+p button{
+    margin: 5px;
+    color: rgb(255, 255, 255);
+    color-interpolation-filters:linearRGB;
+    text-transform:uppercase;
+    border-radius: 5px;
+    border-color: #a3b4c8;
+    background-color: #cc6d3d;
+}
+
+/* Main Styling */
+body {
+    padding:20px;
+    margin:40px auto;
+    max-width: auto;
+    display: flex;
+    border-bottom: 1px solid white;
+    background-color: #022e51;
+    text-shadow:#ffffff;
+    border-radius: 10px;
+}
+
+/* Division styling */
+div {
+    color:#a3b4c8;
+    padding:20px;
+    margin:1px auto;
+    max-width: auto;
+    min-width: 400 auto;
+
+}
+
+/* Form styling (title, author, URL) */
+form {
+    padding: 1px;
+    display:flex;
+    margin: 5 auto;
+    color:#b74803;
+    text-shadow: #cc6d3d;
+}
+form div{
+    padding: 10px;
+}
+form div input {
+    margin: 1px;
+    color: #022e51;
+    border-radius: 5px;
+    border-color: #cc6d3d;
+    background-color: #a3b4c8;
+}
+form button{
+    margin: 1px;
+    text-transform:uppercase;
+    border-radius: 5px;
+    color: white;
+    border-color: #a3b4c8;
+    background-color: #cc6d3d;
+    align-items: last baseline;
+}
+

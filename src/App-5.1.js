@@ -67,7 +67,7 @@ const App = () => {
           <input
           type="text"
           value={username}
-          name="Username"
+          name="Ussarinami"
           onChange={({ target }) => setUsername(target.value)}
         />
       </div>
