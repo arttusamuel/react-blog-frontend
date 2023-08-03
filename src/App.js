@@ -117,7 +117,8 @@ const App = () => {
 
 //Blogin formin renderöinti
   const blogForm = () => (
-    <form onSubmit={addBlog}>
+    <form class='blogform' onSubmit={addBlog}>
+      
       <div>
         Title:  
           <input
@@ -155,39 +156,39 @@ const App = () => {
       <div style={{ 
         backgroundImage: `url(${logo})` 
       }}>
-      
-
         <h2>Blogs App</h2>
-
         <Notification message={errorMessage} />
         {loginForm()}
-
       </div>
     )}
       
     return(
-      <div style={{ 
-        backgroundImage: `url(${logo})`, 
-        backgroundRepeat: 'no-repeat',
-        backgroundPositionX: 'left',
-        backgroundPositionY: '-1cm',
-        backgroundSize: '30%',
-        alignItems: 'center'
 
-      }}>
-
-        <h2>Blogs</h2>
-        <Notification message={validMessage} />
-        <p>Logged in as {user.name}   
-          <button onClick={ () => {window.localStorage.clear(); setUser(null)} }>
-          logout 
-          </button>
-        </p>
-          {blogForm()}
-        {blogs.map(blog =>
-          <Blog key={blog.id} blog={blog} />
+      <div>
+        <head>
+          <title>Blogs application</title>
+        </head>
+        <body>
+          <nav>
           
-        )}
+            <h1 class="topbar">
+              Blogs</h1>
+            <div class='bodydiv'>
+              <Notification message={validMessage} />
+              <p>Logged in as {user.name}  
+                <button onClick={ () => {window.localStorage.clear(); setUser(null)} }>
+                  logout 
+                </button>
+                <p>{blogForm()}
+                  {blogs.map(blog =>
+                  <Blog key={blog.id} blog={blog}/>
+                  )}
+                </p>
+              </p>
+            </div>
+          </nav>
+
+        </body>
       </div>
     )
   }
