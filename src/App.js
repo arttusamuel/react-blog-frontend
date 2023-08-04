@@ -5,6 +5,7 @@ import blogService from './services/blogs'
 import loginService from './services/login'
 import logo from './ak.png'
 
+
 //
 
 
@@ -172,7 +173,7 @@ const App = () => {
           <nav>
           
             <h1 class="topbar">
-              Blogs</h1>
+              my blogs</h1>
             <div class='bodydiv'>
               <Notification message={validMessage} />
               <p>Logged in as {user.name}  

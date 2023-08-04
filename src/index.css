@@ -4,23 +4,21 @@
     background-attachment:fixed;
     background-size: 100%;
     margin: 20;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'Space Grotesk', sans-serif;
     align-items:center;
     background-position-y:calc(20px );    
 }
+
 .topbar {
     background-image: url(./ak.png);
     background-repeat:no-repeat;
     background-attachment: fixed;
-    background-size: 200px;
-    background-position-x: 5%;
-    background-position-y: 0%;
-
+    background-size: 230px;
+    background-position-x: 3%;
+    background-position-y: -4%;
     margin: 0;
     margin-left: -100%;
     margin-right:-100%;
-
-
 }
 /* Main Styling */
 body {
@@ -28,13 +26,11 @@ body {
     background-repeat:repeat;
     background-position-x: 50%;
     background-position-y: 50%;
-    background-size:200px;
+    background-size:230px;
     align-items: center;
-
     max-width: auto;
-
     border-bottom: 1px solid white;
-    background-color: #ffffff;
+    background-color: #ffF4;
     background-repeat: no-repeat;
     text-shadow: 0px 0px .5px #ffffff;
     border-radius: 10px;
@@ -42,47 +38,41 @@ body {
 }
 .bodydiv {
     background-color: #022e512b;
-
-    
+    max-width: 1000px;   
 }
-
 /* Heading for the page */
 h1 {
+    background-color: #022e51;
     margin: 10px;
     padding: 10px;
-    font-size:xxx-large;
-    font-family:Verdana;
-    text-shadow:1px 1px 1px #cc6d3d, 0 0 1em #000000, 0 0 0.2em #a3b4c8;
     align-items: center;
     text-align: center;
     max-width: auto;
     border-bottom: 2px solid #cc6d3d;
-    background-color: #022e51;
     color:#ffe1d2;
+    font-family:'Maven Pro', sans-serif;
+    font-size:xxx-large;
+    text-shadow:1px 1px 1px #cc6d3d64, 0 0 1em #000000, 0 0 0.2em #a3b4c8;
 }
-
 /* Small texts */
 p {
     padding:5px;
-    margin-left: auto;
     color: #022e51;
 }
 /* Logout Button */
 p button{
     margin: 5px;
-    color: rgb(255, 255, 255);
-    color-interpolation-filters:linearRGB;
     text-transform:uppercase;
     border-radius: 5px;
+    color: #fff;
     border-color: #a3b4c8;
     background-color: #cc6d3d;
 }
-
 /* Division styling */
 div {
-    color:#022e51;
     padding:0px;
     margin:1px auto;
+    color:#022e51;
 }
 /* Form styling (title, author, URL) */
 form {
@@ -98,8 +88,8 @@ form {
     background-color: #022e51;
 }
 form div{
-    color: #a3b4c8;
     padding: 10px;
+    color: #a3b4c8;
 }
 form div input {
     margin: 1px;
@@ -111,10 +101,11 @@ form div input {
 form button{
     margin: 1px;
     text-transform:uppercase;
+    align-items: last baseline;
     border-radius: 5px;
     color: white;
     border-color: #a3b4c8;
-    background-color: #cc6d3d;
-    align-items: last baseline;
+    background-color: #cc6d3d;   
 }
+
 
