@@ -1,58 +1,86 @@
 
-/* Base style */
+/* Base style that affects every element */
+
 *{
-    background-attachment:fixed;
-    background-size: 100%;
-    margin: 20;
-    font-family:'Space Grotesk', sans-serif;
     align-items:center;
-    background-position-y:calc(20px );    
+    font-family:'Space Grotesk', sans-serif;
+    margin: 0;
 }
 
 .topbar {
-    background-image: url(./ak.png);
-    background-repeat:no-repeat;
-    background-attachment: fixed;
-    background-size: 230px;
-    background-position-x: 3%;
-    background-position-y: -4%;
+    background-image: linear-gradient(#00c0fb00 60%, #04184aed ); 
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: calc(min-content+2rem);
     margin: 0;
-    margin-left: -100%;
-    margin-right:-100%;
 }
-/* Main Styling */
-body {
-    background-image: url(./ak.png);
-    background-repeat:repeat;
-    background-position-x: 50%;
-    background-position-y: 50%;
-    background-size:230px;
+/* Main Styling -- backgrnd images and coloring */
+body {  
+    background-image:   
+        linear-gradient(to top left, rgba(0, 0, 0, 0), rgba(0, 1, 12, 0.845)),
+        url(./ak.png),
+        url(./ak.png);
+    background-color: #022e51;
+    background-repeat:no-repeat, no-repeat, no-repeat;
+    background-attachment: scroll, fixed, fixed;
+    background-size: 100%, 400px, 230px;
+    background-position-x: 0%,5%, 50%;
+    background-position-y: 0%,-4%, 50%;
+
     align-items: center;
     max-width: auto;
-    border-bottom: 1px solid white;
-    background-color: #ffF4;
+    min-height: 100%;
     background-repeat: no-repeat;
     text-shadow: 0px 0px .5px #ffffff;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-.bodydiv {
-    background-color: #022e512b;
-    max-width: 1000px;   
+    margin-top: 5rem;
 }
 /* Heading for the page */
 h1 {
-    background-color: #022e51;
     margin: 10px;
     padding: 10px;
-    align-items: center;
-    text-align: center;
+    padding-inline-end: 7%;
+    align-items:center;
+    display: flex;
+    justify-content: flex-end;
     max-width: auto;
-    border-bottom: 2px solid #cc6d3d;
     color:#ffe1d2;
     font-family:'Maven Pro', sans-serif;
-    font-size:xxx-large;
+    font-size:600%;
     text-shadow:1px 1px 1px #cc6d3d64, 0 0 1em #000000, 0 0 0.2em #a3b4c8;
+}
+.loginForm {
+
+    /*Background staying better in the middle and letting overflow on narrow screen */
+    background-image:
+        linear-gradient(to top, rgb(0, 0, 0), rgba(255, 255, 255, 0)),
+        radial-gradient(circle , #ffffff00,#00000064, #04184a),
+        url(Hienonuotio.JPG);
+    background-position-x:  50%;
+    background-position-y:  0%, 0%, 70%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:auto;
+    padding-top: 180px;
+    padding-bottom: 180px; 
+    min-height: 360PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin: 0;
+
+}.loginForm form{
+    size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    }
+/* Body overall style */
+.bodydiv {
+    background-color: #022e512b;
+    max-width: 1000px;
+    margin-block: 1em;
+    margin-top: 0;
 }
 /* Small texts */
 p {
@@ -75,6 +103,14 @@ div {
     color:#022e51;
 }
 /* Form styling (title, author, URL) */
+.blogFormHead{
+    display:none;
+}
+.inputfield{
+    display: flex;
+    justify-content: center;
+    flex-flow:row wrap;
+}
 form {
     padding: 1px;
     margin: 5 auto;
@@ -83,25 +119,32 @@ form {
 }
 .blogform {
     display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
     max-width: 800px auto;
     padding-right: 10px;
     background-color: #022e51;
 }
-form div{
+.blogform div{
+    margin: 0.1em;
     padding: 10px;
     color: #a3b4c8;
 }
 form div input {
     margin: 1px;
+    width:auto;
+    display: flex;
+    justify-self: center;
     color: #a3b4c8;
     border-radius: 5px;
     border-color: #cc6d3d;
     background-color: #d7eaffb1;
 }
 form button{
-    margin: 1px;
+    margin: 1em;
+    display: flex;
+    justify-self: center;
     text-transform:uppercase;
-    align-items: last baseline;
     border-radius: 5px;
     color: white;
     border-color: #a3b4c8;

@@ -119,33 +119,38 @@ const App = () => {
 //Blogin formin renderöinti
   const blogForm = () => (
     <form class='blogform' onSubmit={addBlog}>
-      
       <div>
-        Title:  
-          <input
-          type="text"
-          value={title}
-          name="Title"
-          onChange={({ target }) => setTitle(target.value)}
-        />
+        <h3 class blogFormHead>Add a new blog</h3>
       </div>
-      <div>
-        Author:   
-          <input
-          type="text"
-          value={author}
-          name="Author"
-          onChange={({ target }) => setAuthor(target.value)}
-        />
-      </div>
-      <div>
-        URL:  
-          <input
-          type="text"
-          value={url}
-          name="Url"
-          onChange={({ target }) => setUrl(target.value)}
-        />
+      <div class='inputfield'>
+        <div>
+            <input
+            type="text"
+            value={title}
+            name="Title"
+            onChange={({ target }) => setTitle(target.value)}
+            placeholder='Title'
+          />
+        </div>
+        <div>
+            
+            <input
+            type="text"
+            value={author}
+            name="Author"
+            onChange={({ target }) => setAuthor(target.value)}
+            placeholder='Author'
+          />
+        </div>
+        <div>
+            <input
+            type="text"
+            value={url}
+            name="Url"
+            onChange={({ target }) => setUrl(target.value)}
+            placeholder='URL-address'
+          />
+        </div>
       </div>
       <button type="submit">create</button>
     </form>   
@@ -154,12 +159,10 @@ const App = () => {
 //RETURN
  if (user === null){
     return (
-      <div style={{ 
-        backgroundImage: `url(${logo})` 
-      }}>
-        <h2>Blogs App</h2>
-        <Notification message={errorMessage} />
-        {loginForm()}
+      <div >
+        <h1 class="topbar">Blogs App</h1>
+          <Notification message={errorMessage} />
+        <div class='loginForm'>{loginForm()}</div>
       </div>
     )}
       
@@ -171,7 +174,6 @@ const App = () => {
         </head>
         <body>
           <nav>
-          
             <h1 class="topbar">
               my blogs</h1>
             <div class='bodydiv'>

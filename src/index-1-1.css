@@ -1,0 +1,149 @@
+
+/* Base style */
+*{
+    background-attachment:fixed;
+    background-size: 100%;
+
+    font-family:'Space Grotesk', sans-serif;
+    align-items:center;
+    margin: 0;
+    background-position-y:calc(20px );    
+}
+
+.topbar {
+    background-image:   linear-gradient(to top left, rgba(0, 0, 0, 0), rgb(0, 0, 0)),
+                        url(./ak.png);
+    background-repeat:no-repeat, no-repeat;
+    background-attachment: scroll, fixed;
+    background-size: 100%, 400px;
+    background-position-x: 0%,3%;
+    background-position-y: 0%,-10%;
+    margin: 0;
+}
+/* Main Styling */
+body {
+    background-image: url(./ak.png);
+    background-repeat:repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-size:230px;
+    align-items: center;
+    max-width: auto;
+    min-height: 1440px;
+    border-bottom: 1px solid white;
+    background-repeat: no-repeat;
+    text-shadow: 0px 0px .5px #ffffff;
+    margin-top: 20px;
+}
+/* Heading for the page */
+h1 {
+    background-color: rgb(2, 46, 81);
+    margin: 10px;
+    padding: 10px;
+    padding-inline-end: 7%;
+    align-items:center;
+    display: flex;
+    justify-content: flex-end;
+    max-width: auto;
+    border-bottom: 2px solid #cc6d3d;
+    color:#ffe1d2;
+    font-family:'Maven Pro', sans-serif;
+    font-size:600%;
+    text-shadow:1px 1px 1px #cc6d3d64, 0 0 1em #000000, 0 0 0.2em #a3b4c8;
+}
+.loginForm {
+    background-image:   radial-gradient(closest-side,rgba(2, 46, 82, 0.297), rgba(0, 6, 11, 0.827) ),
+    url(lataus.png);
+    background-position:center;
+    background-repeat:initial;
+    background-attachment:scroll;
+    background-blend-mode:color-burn;
+    padding: 180px; 
+    min-height: 360PX;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+
+}.loginForm form{
+    size: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    }
+/* Body overall style */
+.bodydiv {
+    background-color: #022e512b;
+    max-width: 1000px;
+    margin-block: 1em;
+    margin-top: 0;
+}
+/* Small texts */
+p {
+    padding:5px;
+    color: #022e51;
+}
+/* Logout Button */
+p button{
+    margin: 5px;
+    text-transform:uppercase;
+    border-radius: 5px;
+    color: #fff;
+    border-color: #a3b4c8;
+    background-color: #cc6d3d;
+}
+/* Division styling */
+div {
+    padding:0px;
+    margin:1px auto;
+    color:#022e51;
+}
+/* Form styling (title, author, URL) */
+.blogFormHead{
+    display:none;
+}
+.inputfield{
+    display: flex;
+    justify-content: center;
+    flex-flow:row wrap;
+}
+form {
+    padding: 1px;
+    margin: 5 auto;
+    color:#b74803;
+    text-shadow: 1px 1px 1px #cc6d3d;
+}
+.blogform {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    max-width: 800px auto;
+    padding-right: 10px;
+    background-color: #022e51;
+}
+.blogform div{
+    margin: 0.1em;
+    padding: 10px;
+    color: #a3b4c8;
+}
+form div input {
+    margin: 1px;
+    width:auto;
+    display: flex;
+    justify-self: center;
+    color: #a3b4c8;
+    border-radius: 5px;
+    border-color: #cc6d3d;
+    background-color: #d7eaffb1;
+}
+form button{
+    margin: 1em;
+    display: flex;
+    justify-self: center;
+    text-transform:uppercase;
+    border-radius: 5px;
+    color: white;
+    border-color: #a3b4c8;
+    background-color: #cc6d3d;   
+}
+
+
